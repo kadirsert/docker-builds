@@ -6,6 +6,10 @@ RUN yum -y install \
     ghostscript.x86_64 \
  && yum clean all && systemctl enable cups.service
 
+ADD config.sh /config.sh
+RUN chmod 755 /config.sh
+RUN /config.sh
+
 EXPOSE 631
 VOLUME ["/var/spool/cups", "/var/log/cups"]
 
