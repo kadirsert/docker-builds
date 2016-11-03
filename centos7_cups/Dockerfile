@@ -6,6 +6,8 @@ RUN yum -y install \
     ghostscript.x86_64 \
  && yum clean all && systemctl enable cups.service
 
+RUN rpm -qa |grep cups > /tmp/rpmout
+
 ADD config.sh /config.sh
 RUN chmod 755 /config.sh
 RUN /config.sh
