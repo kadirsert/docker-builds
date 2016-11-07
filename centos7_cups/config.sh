@@ -5,6 +5,7 @@ useradd -g cupsadmins -c 'CUPS administration account' cupsadmin
 echo "cupsadmin:Password" | chpasswd
 
 sed -i 's/SystemGroup sys root/SystemGroup sys root cupsadmins/' /etc/cups/cups-files.conf
+sed -i 's/#DocumentRoot \/usr\/share\/cups\/www/DocumentRoot \/usr\/share\/cups\/www/' /etc/cups/cups-files.conf
 
 sed -i 's/Listen localhost:631/Listen 0.0.0.0:631/' /etc/cups/cupsd.conf
 sed -i 's/Browsing On/Browsing Off/' /etc/cups/cupsd.conf
