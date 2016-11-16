@@ -4,4 +4,4 @@ Build image:
 
 Start container:
 
-**docker run --privileged -d -p 631:631 --name printcontainer centos6_cups**
+**docker run --privileged -d -p 631:631 --name \<containername\> centos6_cups**
