@@ -1,7 +1,7 @@
 FROM centos:6.8
 MAINTAINER Kadir Sert
 
-RUN yum -y groupinstall cups
+RUN yum -y groupinstall "Print Server"
 RUN yum -y install \
     ghostscript.x86_64 \
     hplip.x86_64 \
