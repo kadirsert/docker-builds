@@ -4,6 +4,7 @@ MAINTAINER Kadir Sert
 RUN yum -y install \
     cups \
     ghostscript.x86_64 \
+    hplip.x86_64 \
  && yum clean all && chkconfig cups on
 
 ADD config.sh /config.sh
