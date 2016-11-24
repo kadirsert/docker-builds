@@ -7,7 +7,7 @@ echo "cupsadmin:Password" | chpasswd
 #sed -i 's/LogLevel warn/LogLevel debug/' /etc/cups/cupsd.conf
 
 sed -i 's/SystemGroup sys root/SystemGroup sys root cupsadmins/' /etc/cups/cupsd.conf
-sed -i 's/Listen localhost:631/Listen *:631/' /etc/cups/cupsd.conf
+sed -i 's/Listen localhost:631/Listen 0.0.0.0:631/' /etc/cups/cupsd.conf
 sed -i 's/Browsing On/Browsing Off/' /etc/cups/cupsd.conf
 
 sed -i '/DefaultAuthType Basic/a DefaultEncryption Never' /etc/cups/cupsd.conf
