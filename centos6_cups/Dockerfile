@@ -11,7 +11,8 @@ ADD config.sh /config.sh
 RUN chmod 755 /config.sh
 RUN /config.sh
 
+VOLUME ["/etc/cups", "/var/spool/cups", "/var/log/cups", "/var/cache/cups"]
 EXPOSE 631
-VOLUME ["/var/spool/cups", "/var/log/cups"]
+
 
 CMD [ "/sbin/init" ]
