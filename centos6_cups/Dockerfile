@@ -1,8 +1,8 @@
 FROM centos:6.8
 MAINTAINER Kadir Sert
 
+RUN yum -y groupinstall cups
 RUN yum -y install \
-    cups \
     ghostscript.x86_64 \
     hplip.x86_64 \
  && yum clean all && chkconfig cups on
