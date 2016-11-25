@@ -10,4 +10,5 @@ do
     line_arr=(${line})
     echo "${line_arr[0]} --> ${line_arr[1]}"
   done
+  echo
 done
