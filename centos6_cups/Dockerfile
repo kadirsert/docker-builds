@@ -1,7 +1,9 @@
 FROM centos:6.8
 MAINTAINER Kadir Sert
 
-RUN yum -y groupinstall "Print Server" --disableexcludes=all
+RUN sed -i '/nodocs/d' /etc/yum.conf
+
+RUN yum -y groupinstall "Print Server"
 RUN yum -y install \
     ghostscript.x86_64 \
     hplip.x86_64 \
