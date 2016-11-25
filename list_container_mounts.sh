@@ -5,10 +5,9 @@ do
   echo "${container_name}:"
   mounts=$(docker inspect --format='{{range .Mounts}}{{ .Source }} {{ .Destination }}:{{end}}' ${container_name})
   IFS=':' read -r -a mounts_arr <<< "${mounts}"
-  for ind in "${!mounts_arr[@]}"
+  for line in "${mounts_arr[@]}"
   do
-    mount_line=(${mounts_arr[ind]})
-    echo "$ind Source: ${mount_line[0]}"
-    echo "$ind Destination: ${mount_line[1]}"
+    line_arr=(${line})
+    echo "${line_arr[0]} --> ${line_arr[1]}"
   done
 done
