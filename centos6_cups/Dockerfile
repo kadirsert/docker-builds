@@ -13,7 +13,7 @@ ADD config.sh /config.sh
 RUN chmod 755 /config.sh
 RUN /config.sh
 
-VOLUME ["/usr/share/cups", "/var/spool/cups", "/var/log/cups", "/var/cache/cups"]
+VOLUME ["/etc/cups", "/usr/share/cups", "/var/spool/cups", "/var/log/cups", "/var/cache/cups"]
 EXPOSE 631
 
 
